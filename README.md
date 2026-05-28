@@ -31,7 +31,7 @@ Testing conducted on a real Samsung device (Android 14, One UI).
 
 ## What Was Tested
 
-- [Test Plan & Test Cases](test-plan/test-cases.md)
+- [Test Plan & Test Cases](/Test%20Plan/Test-Cases.md)
 
 Key areas:
 - App launch and stability across versions
@@ -49,12 +49,12 @@ Key areas:
 
 | ID | Title | Severity | Status |
 |---|---|---|---|
-| [BUG-01](bug-reports/BUG-01-SecurityException.md) | App crashes on launch — SecurityException (Android 13+ incompatibility) | Critical | ✅ Fixed |
-| [BUG-02](bug-reports/BUG-02-NoSuchFieldError.md) | App crashes — NoSuchFieldError, ExoPlayer version conflict, crash loop | Critical | ✅ Fixed |
-| [BUG-03](bug-reports/BUG-03-ForegroundServiceType.md) | MissingForegroundServiceTypeException on every launch (Android 14) | Critical | 🔴 Open |
-| [BUG-04](bug-reports/BUG-04-AudioFocus.md) | Audio plays simultaneously with calls, Telegram audio, Instagram video | High | 🔴 Open |
-| [BUG-05](bug-reports/BUG-05-Widget.md) | Widget: album art delay, ghost Back button, widget disappears | Medium | 🔴 Open |
-| [BUG-06](bug-reports/BUG-06-UI-link.md) | Site link inaccessible — overlapped by Android system navigation bar | High | 🔴 Open |
+| [BUG-01](/Bug-Reports/BR-01_SecurityException.md) | App crashes on launch — SecurityException (Android 13+ incompatibility) | Critical | ✅ Fixed |
+| [BUG-02](/Bug-Reports/BR-02_NoSuchField_Error.md) | App crashes — NoSuchFieldError, ExoPlayer version conflict, crash loop | Critical | ✅ Fixed |
+| [BUG-03](/Bug-Reports/BR-03_ForegroundServiceType_Exception.md) | MissingForegroundServiceTypeException on every launch (Android 14) | Critical | 🔴 Open |
+| [BUG-04](/Bug-Reports/BR-04_Audiofocus.md) | Audio plays simultaneously with calls, Telegram audio, Instagram video | High | 🔴 Open |
+| [BUG-05](/Bug-Reports/BR-05_Widget_disappears.md) | Widget: album art delay, ghost Back button, widget disappears | Medium | 🔴 Open |
+| [BUG-06](/Bug-Reports/BR-06_UI_link.md) | Site link inaccessible — overlapped by Android system navigation bar | High | 🔴 Open |
 
 ---
 
@@ -92,22 +92,23 @@ Radio plays simultaneously with incoming calls (silent mode), Telegram audio mes
 ## Repository Structure
 
 ```
-radiofish-beta-testing/
+Test Project Radio Fish/
 ├── README.md
-├── test-plan/
-│   └── test-cases.md
-├── bug-reports/
-│   ├── BUG-01-SecurityException.md
-│   ├── BUG-02-NoSuchFieldError.md
-│   ├── BUG-03-ForegroundServiceType.md
-│   ├── BUG-04-AudioFocus.md
-│   ├── BUG-05-Widget.md
-│   └── BUG-06-UI-link.md
+├── Test Plan/
+│   ├── Test-Cases.md
+│   └── Test-Plan.md
+├── Bug Reports/
+│   ├── BR-01_SecurityException.md
+│   ├── BR-02_NoSuchField_Error.md
+│   ├── BR-03_ForegroundServiceType_Exception.md
+│   ├── BR-04_Audiofocus.md
+│   ├── BR-05_Widget_disappears.md
+│   └── BR-06_UI_link.md
 ├── logs/
-│   ├── crash-v1-SecurityException.txt
-│   ├── crash-v2-NoSuchFieldError.txt
-│   └── crash-v3-ForegroundServiceType.txt
+│   ├── 01_Crash-v1-SecurityException.txt
+│   ├── 02_Crash-v2-NoSuchFieldError.txt
+│   └── 03_Crash-v3-ForegroundServiceType.txt
 └── media/
-    ├── widget-disappears.mp4
-    └── link-overlapped-navbar.png
+    ├── 
+    └── 
 ```
