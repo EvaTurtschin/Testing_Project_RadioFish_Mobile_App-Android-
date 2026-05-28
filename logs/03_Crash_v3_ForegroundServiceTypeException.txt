@@ -1,0 +1,37 @@
+--------- beginning of crash
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: FATAL EXCEPTION: main
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: Process: com.radiofish.app, PID: 15224
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: android.app.MissingForegroundServiceTypeException:
+    Starting FGS without a type callApp=com.radiofish.app callerApp=com.radiofish.app
+    targetClass=com.doublesymmetry.trackplayer.service.MusicService
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3338)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3321)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3263)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:5951)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:771)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at com.doublesymmetry.trackplayer.service.MusicService.onPlay(MusicService.kt:392)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at com.doublesymmetry.kotlinaudio.players.BaseAudioPlayer$mediaSessionCallback$1.onPlay(BaseAudioPlayer.kt:181)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.media.session.MediaSession$CallbackMessageHandler.handleMessage(MediaSession.java:1578)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:273)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:363)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10060)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+05-04 08:34:27.736 15224 15224 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+
+--------- second crash instance (same session)
+05-04 08:34:44.324 15334 15334 E AndroidRuntime: FATAL EXCEPTION: main
+05-04 08:34:44.324 15334 15334 E AndroidRuntime: Process: com.radiofish.app, PID: 15334
+05-04 08:34:44.324 15334 15334 E AndroidRuntime: android.app.MissingForegroundServiceTypeException:
+    Starting FGS without a type callApp=com.radiofish.app callerApp=com.radiofish.app
+    targetClass=com.doublesymmetry.trackplayer.service.MusicService
+
+--------- notes
+-- App launches and is usable despite this exception on Samsung Android 14
+-- Exception thrown every time Play is triggered via MediaSession
+-- Exact crash location: MusicService.kt:392 — startForeground() called without type
+-- Fix: add foregroundServiceType="mediaPlayback" to AndroidManifest.xml
+   and pass FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK to startForeground()
+-- Android 14 requirement: https://developer.android.com/about/versions/14/changes/fgs-types-required

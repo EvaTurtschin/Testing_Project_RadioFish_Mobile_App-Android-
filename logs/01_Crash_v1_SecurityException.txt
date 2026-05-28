@@ -1,0 +1,37 @@
+--------- beginning of crash
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: FATAL EXCEPTION: main
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: Process: com.radiofish.app, PID: 12185
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: java.lang.SecurityException: com.radiofish.app: One of RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED should be specified when a receiver isn't being registered exclusively for system broadcasts
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3338)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3321)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3263)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.registerReceiverWithFeature(IActivityManager.java:6421)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.ContextImpl.registerReceiverInternal(ContextImpl.java:2001)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.ContextImpl.registerReceiver(ContextImpl.java:1930)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.ContextImpl.registerReceiver(ContextImpl.java:1918)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.content.ContextWrapper.registerReceiver(ContextWrapper.java:795)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.google.android.exoplayer2.ui.PlayerNotificationManager.startOrUpdateNotification(PlayerNotificationManager.java:1165)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.google.android.exoplayer2.ui.PlayerNotificationManager.handleMessage(PlayerNotificationManager.java:1415)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.google.android.exoplayer2.ui.PlayerNotificationManager.$r8$lambda$hDN6RMWHvTCSAt_reWH1_HHmp5E(Unknown Source:0)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.google.android.exoplayer2.ui.PlayerNotificationManager$$ExternalSyntheticLambda0.handleMessage(Unknown Source:2)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:273)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:363)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10060)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.android.server.am.BroadcastController.registerReceiverWithFeatureTraced(BroadcastController.java:553)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.registerReceiverWithFeature(ActivityManagerService.java:143)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$registerReceiverWithFeature$(IActivityManager.java:12334)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:3178)
+05-03 13:55:14.244 12185 12185 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:425)
+
+--------- additional context
+05-03 13:55:14.250  1460  4455 W ActivityTaskManager:   Force finishing activity com.radiofish.app/.MainActivity
+05-03 13:55:14.256  1460 12269 W ActivityManager: crash : com.radiofish.app, 10333
+05-03 13:55:14.298  1460  2753 I ActivityManager: Process com.radiofish.app (pid 12185) has died: fg TOP
+05-03 13:55:14.309  1460  2753 W ActivityManager: Scheduling restart of crashed service
+    com.radiofish.app/com.doublesymmetry.trackplayer.service.MusicService in 5400000ms

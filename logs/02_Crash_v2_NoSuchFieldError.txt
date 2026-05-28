@@ -1,0 +1,29 @@
+--------- beginning of crash
+05-04 [version 3] E AndroidRuntime: FATAL EXCEPTION: main
+05-04 E AndroidRuntime: Process: com.radiofish.app
+05-04 E AndroidRuntime: java.lang.NoSuchFieldError: No field playbackProperties of type
+    Lcom/google/android/exoplayer2/MediaItem$PlaybackProperties;
+    in class Lcom/google/android/exoplayer2/MediaItem;
+    or its superclasses (declaration of 'com.google.android.exoplayer2.MediaItem'
+    appears in base.apk!classes3.dex)
+05-04 E AndroidRuntime: 	at com.doublesymmetry.trackplayer.service.MusicService
+05-04 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+05-04 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:273)
+05-04 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:363)
+05-04 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10060)
+
+--------- crash loop observed
+W ActivityManager: Rescheduling restart of crashed service
+    com.radiofish.app/com.doublesymmetry.trackplayer.service.MusicService in 1000ms
+W ActivityManager: Rescheduling restart of crashed service
+    com.radiofish.app/com.doublesymmetry.trackplayer.service.MusicService in 1000ms
+W ActivityManager: Rescheduling restart of crashed service
+    com.radiofish.app/com.doublesymmetry.trackplayer.service.MusicService in 1000ms
+
+--------- notes
+-- Crash loop: MusicService restarts every ~2 sec and crashes again
+-- 6+ crash cycles observed within 30 seconds
+-- PIDs observed: 26526, 26640, 26755, 26857, 27066, 27364
+-- Root cause: field 'playbackProperties' removed in newer ExoPlayer2,
+   still referenced by react-native-track-player dependency
+   
