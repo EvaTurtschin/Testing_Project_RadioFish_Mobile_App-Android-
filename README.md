@@ -15,7 +15,7 @@ Testing conducted on a real Samsung device (Android 14, One UI).
 
 **Platform:** Android (React Native, targetSDK 35)  
 **Test type:** Beta testing via Google Play invitation  
-**Testing period:** May 2025
+**Testing period:** May 2026
 
 ---
 
@@ -51,7 +51,7 @@ Key areas:
 |---|---|---|---|
 | [BUG-01](/Bug-Reports/BR-01_SecurityException.md) | App crashes on launch — SecurityException (Android 13+ incompatibility) | Critical | ✅ Fixed |
 | [BUG-02](/Bug-Reports/BR-02_NoSuchField_Error.md) | App crashes — NoSuchFieldError, ExoPlayer version conflict, crash loop | Critical | ✅ Fixed |
-| [BUG-03](/Bug-Reports/BR-03_ForegroundServiceType_Exception.md) | MissingForegroundServiceTypeException on every launch (Android 14) | Critical | 🔴 Open |
+| [BUG-03](/Bug-Reports/BR-03_ForegroundServiceType_Exception.md) | MissingForegroundServiceTypeException on every launch (Android 14) | Critical |  ✅ Fixed |
 | [BUG-04](/Bug-Reports/BR-04_Audiofocus.md) | Audio plays simultaneously with calls, Telegram audio, Instagram video | High | 🔴 Open |
 | [BUG-05](/Bug-Reports/BR-05_Widget_disappears.md) | Widget: album art delay, ghost Back button, widget disappears | Medium | 🔴 Open |
 | [BUG-06](/Bug-Reports/BR-06_UI_link.md) | Site link inaccessible — overlapped by Android system navigation bar | High | 🔴 Open |
