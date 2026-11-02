@@ -24,9 +24,10 @@ Testing conducted on a real Samsung device (Android 14, One UI).
 | Tool | Purpose |
 |---|---|
 | ADB + Android Studio Logcat | Crash analysis, log collection |
-| Charles Proxy | Network traffic interception |
+| Charles Proxy* | Network traffic interception |
 | Real device: Samsung (Android 14) | Chosen specifically for Samsung One UI background process behaviour |
 
+* Charles Proxy was planned for network checks, but could not be connected to the beta build. Test cases that need it (N-05–N-08, FL-03) were not run.
 ---
 
 ## What Was Tested
@@ -37,12 +38,13 @@ Key areas:
 - App launch and stability across versions
 - Audio playback and format switching (AAC64 / MP3192)
 - Audio Focus behaviour (calls, notifications, other audio apps)
-- Network conditions (offline, slow connection, server errors)
+- Network conditions (offline, slow connection, server errors) *
 - System interruptions (calls, lock screen, background)
 - Widget behaviour
 - Favourites, history, third-party app integrations
 - UI / navigation
 
+* Charles Proxy was planned for network checks, but could not be connected to the beta build. Test cases that need it (N-05–N-08, FL-03) were not run.
 ---
 
 ## Bug Summary
