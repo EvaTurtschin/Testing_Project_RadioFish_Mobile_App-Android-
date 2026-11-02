@@ -1,7 +1,7 @@
 # Test Plan — Radio.Fish Android Beta
 
 **Version:** 1.0  
-**Date:** May 2025  
+**Date:** May 2026  
 **Tester:** Eva Turtschin  
 **Type:** Manual beta testing  
 
@@ -24,7 +24,7 @@ before public release.
 - Network conditions and error handling
 - Widget (notification bar player) behaviour
 - Favourites and playback history
-- Third-party integrations (YouTube, Spotify, Apple Music, Telegram)
+- Third-party integrations (YouTube, Spotify, Telegram)
 - UI layout and accessibility
 
 ### Out of scope
@@ -43,7 +43,7 @@ before public release.
 | OS | Android 14 (One UI) |
 | App | Radio.Fish — React Native, targetSDK 35 |
 | Distribution | Google Play beta (invitation) |
-| Tools | ADB, Android Studio Logcat, Charles Proxy |
+| Tools | ADB, Android Studio Logcat |
 
 **Why real Samsung device (not emulator):**  
 Samsung One UI applies aggressive background process management via `FreecessController`,  
@@ -56,8 +56,7 @@ which kills services that stock Android would keep alive. Critical for a backgro
 1. **Smoke first** — confirm app launches and plays audio before deeper testing
 2. **Logcat on every launch** — collect crash data from day one
 3. **Version tracking** — re-test fixed bugs on each new release, check for regressions
-4. **Charles Proxy** — inspect network traffic for stream URLs, metadata, API calls
-5. **Real interaction scenarios** — test Audio Focus with actual calls, Telegram, other apps
+4. **Real interaction scenarios** — test Audio Focus with actual calls, Telegram, other apps
 
 ---
 
@@ -65,7 +64,6 @@ which kills services that stock Android would keep alive. Critical for a backgro
 
 - App installed via Google Play beta link
 - ADB connection established (`adb devices` shows device)
-- Charles Proxy configured on device Wi-Fi
 
 ## 6. Exit Criteria
 
